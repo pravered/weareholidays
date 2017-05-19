@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "twitter",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fb",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "instagram",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "photos",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "publicPhotos",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "notes",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "videos",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "checkIns",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "distance",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170518090022",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "day_summary",
+    "pagination": "pagination"
+}

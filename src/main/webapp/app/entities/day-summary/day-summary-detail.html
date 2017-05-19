@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="weareholidaysApp.daySummary.detail.title">Day Summary</span> {{vm.daySummary.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="weareholidaysApp.daySummary.twitter">Twitter</span></dt>
+        <dd>
+            <span>{{vm.daySummary.twitter}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.daySummary.fb">Fb</span></dt>
+        <dd>
+            <span>{{vm.daySummary.fb}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.daySummary.instagram">Instagram</span></dt>
+        <dd>
+            <span>{{vm.daySummary.instagram}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.daySummary.photos">Photos</span></dt>
+        <dd>
+            <span>{{vm.daySummary.photos}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.daySummary.publicPhotos">Public Photos</span></dt>
+        <dd>
+            <span>{{vm.daySummary.publicPhotos}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.daySummary.notes">Notes</span></dt>
+        <dd>
+            <span>{{vm.daySummary.notes}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.daySummary.videos">Videos</span></dt>
+        <dd>
+            <span>{{vm.daySummary.videos}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.daySummary.checkIns">Check Ins</span></dt>
+        <dd>
+            <span>{{vm.daySummary.checkIns}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.daySummary.distance">Distance</span></dt>
+        <dd>
+            <span>{{vm.daySummary.distance}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="day-summary-detail.edit({id:vm.daySummary.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

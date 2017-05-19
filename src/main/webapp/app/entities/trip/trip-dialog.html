@@ -1,0 +1,165 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTripLabel" data-translate="weareholidaysApp.trip.home.createOrEditLabel">Create or edit a Trip</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.trip.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.trip.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.trip.name"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.startLocationLat" for="field_startLocationLat">Start Location Lat</label>
+            <input type="number" class="form-control" name="startLocationLat" id="field_startLocationLat"
+                    ng-model="vm.trip.startLocationLat"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.startLocationLong" for="field_startLocationLong">Start Location Long</label>
+            <input type="number" class="form-control" name="startLocationLong" id="field_startLocationLong"
+                    ng-model="vm.trip.startLocationLong"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.endLocationLat" for="field_endLocationLat">End Location Lat</label>
+            <input type="number" class="form-control" name="endLocationLat" id="field_endLocationLat"
+                    ng-model="vm.trip.endLocationLat"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.endLocationLong" for="field_endLocationLong">End Location Long</label>
+            <input type="number" class="form-control" name="endLocationLong" id="field_endLocationLong"
+                    ng-model="vm.trip.endLocationLong"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.startTime" for="field_startTime">Start Time</label>
+            <input type="number" class="form-control" name="startTime" id="field_startTime"
+                    ng-model="vm.trip.startTime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.endTime" for="field_endTime">End Time</label>
+            <input type="number" class="form-control" name="endTime" id="field_endTime"
+                    ng-model="vm.trip.endTime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.isUploaded" for="field_isUploaded">Is Uploaded</label>
+                <input type="checkbox" name="isUploaded" id="field_isUploaded"
+                          ng-model="vm.trip.isUploaded"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.isFinished" for="field_isFinished">Is Finished</label>
+                <input type="checkbox" name="isFinished" id="field_isFinished"
+                          ng-model="vm.trip.isFinished"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.isPublished" for="field_isPublished">Is Published</label>
+                <input type="checkbox" name="isPublished" id="field_isPublished"
+                          ng-model="vm.trip.isPublished"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.publishedTime" for="field_publishedTime">Published Time</label>
+            <input type="number" class="form-control" name="publishedTime" id="field_publishedTime"
+                    ng-model="vm.trip.publishedTime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.isDeleted" for="field_isDeleted">Is Deleted</label>
+                <input type="checkbox" name="isDeleted" id="field_isDeleted"
+                          ng-model="vm.trip.isDeleted"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.featureImageLocalUri" for="field_featureImageLocalUri">Feature Image Local Uri</label>
+            <input type="text" class="form-control" name="featureImageLocalUri" id="field_featureImageLocalUri"
+                    ng-model="vm.trip.featureImageLocalUri"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.featureImageRemoteUri" for="field_featureImageRemoteUri">Feature Image Remote Uri</label>
+            <input type="text" class="form-control" name="featureImageRemoteUri" id="field_featureImageRemoteUri"
+                    ng-model="vm.trip.featureImageRemoteUri"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.noOfDays" for="field_noOfDays">No Of Days</label>
+            <input type="number" class="form-control" name="noOfDays" id="field_noOfDays"
+                    ng-model="vm.trip.noOfDays"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.createdAt" for="field_createdAt">Created At</label>
+            <input type="text" class="form-control" name="createdAt" id="field_createdAt"
+                    ng-model="vm.trip.createdAt"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.viewCount" for="field_viewCount">View Count</label>
+            <input type="number" class="form-control" name="viewCount" id="field_viewCount"
+                    ng-model="vm.trip.viewCount"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.secretKey" for="field_secretKey">Secret Key</label>
+            <input type="text" class="form-control" name="secretKey" id="field_secretKey"
+                    ng-model="vm.trip.secretKey"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.featured" for="field_featured">Featured</label>
+            <input type="number" class="form-control" name="featured" id="field_featured"
+                    ng-model="vm.trip.featured"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.trip.isHidden" for="field_isHidden">Is Hidden</label>
+                <input type="checkbox" name="isHidden" id="field_isHidden"
+                          ng-model="vm.trip.isHidden"/>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="weareholidaysApp.trip.tripSummary" for="field_tripSummary">Trip Summary</label>
+            <select class="form-control" id="field_tripSummary" name="tripSummary" ng-model="vm.trip.tripSummaryId" ng-options="tripSummary.id as tripSummary.id for tripSummary in vm.tripsummaries | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="weareholidaysApp.trip.tripSettings" for="field_tripSettings">Trip Settings</label>
+            <select class="form-control" id="field_tripSettings" name="tripSettings" ng-model="vm.trip.tripSettingsId" ng-options="tripSettings.id as tripSettings.id for tripSettings in vm.tripsettings | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="weareholidaysApp.trip.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.trip.userId" ng-options="user.id as user.login for user in vm.users"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="weareholidaysApp.trip.coupon" for="field_coupon">Coupon</label>
+            <select class="form-control" id="field_coupon" name="coupon" ng-model="vm.trip.couponId" ng-options="coupon.id as coupon.id for coupon in vm.coupons | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

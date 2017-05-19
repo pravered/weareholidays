@@ -1,0 +1,79 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTripPeopleLabel" data-translate="weareholidaysApp.tripPeople.home.createOrEditLabel">Create or edit a Trip People</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.tripPeople.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.tripPeople.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripPeople.phoneBookType" for="field_phoneBookType">Phone Book Type</label>
+            <input type="text" class="form-control" name="phoneBookType" id="field_phoneBookType"
+                    ng-model="vm.tripPeople.phoneBookType"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripPeople.facebookType" for="field_facebookType">Facebook Type</label>
+            <input type="text" class="form-control" name="facebookType" id="field_facebookType"
+                    ng-model="vm.tripPeople.facebookType"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripPeople.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.tripPeople.name"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripPeople.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.tripPeople.email"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripPeople.imageLocalUri" for="field_imageLocalUri">Image Local Uri</label>
+            <input type="text" class="form-control" name="imageLocalUri" id="field_imageLocalUri"
+                    ng-model="vm.tripPeople.imageLocalUri"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripPeople.imageRemoteUri" for="field_imageRemoteUri">Image Remote Uri</label>
+            <input type="text" class="form-control" name="imageRemoteUri" id="field_imageRemoteUri"
+                    ng-model="vm.tripPeople.imageRemoteUri"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripPeople.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="vm.tripPeople.type"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripPeople.inTrip" for="field_inTrip">In Trip</label>
+                <input type="checkbox" name="inTrip" id="field_inTrip"
+                          ng-model="vm.tripPeople.inTrip"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripPeople.identifier" for="field_identifier">Identifier</label>
+            <input type="text" class="form-control" name="identifier" id="field_identifier"
+                    ng-model="vm.tripPeople.identifier"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

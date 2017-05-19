@@ -1,0 +1,67 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCouponLabel" data-translate="weareholidaysApp.coupon.home.createOrEditLabel">Create or edit a Coupon</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.coupon.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.coupon.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.coupon.objectId" for="field_objectId">Object Id</label>
+            <input type="text" class="form-control" name="objectId" id="field_objectId"
+                    ng-model="vm.coupon.objectId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.coupon.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                    ng-model="vm.coupon.code"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.coupon.message" for="field_message">Message</label>
+            <input type="text" class="form-control" name="message" id="field_message"
+                    ng-model="vm.coupon.message"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.coupon.validFrom" for="field_validFrom">Valid From</label>
+            <input type="number" class="form-control" name="validFrom" id="field_validFrom"
+                    ng-model="vm.coupon.validFrom"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.coupon.validTill" for="field_validTill">Valid Till</label>
+            <input type="number" class="form-control" name="validTill" id="field_validTill"
+                    ng-model="vm.coupon.validTill"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.coupon.isActive" for="field_isActive">Is Active</label>
+                <input type="checkbox" name="isActive" id="field_isActive"
+                          ng-model="vm.coupon.isActive"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.coupon.publishedMessage" for="field_publishedMessage">Published Message</label>
+            <input type="text" class="form-control" name="publishedMessage" id="field_publishedMessage"
+                    ng-model="vm.coupon.publishedMessage"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

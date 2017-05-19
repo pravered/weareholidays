@@ -1,0 +1,55 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "facebook",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "twitter",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "instagram",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "sync",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "checkIn",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "camerRoll",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "cameraRollSyncTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "facebookSyncTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "twitterSinceId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "instagramSyncTime",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170518091939",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "trip_settings",
+    "pagination": "pagination"
+}

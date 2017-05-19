@@ -1,0 +1,46 @@
+{
+    "weareholidaysApp": {
+        "trip" : {
+            "home": {
+                "title": "Trips",
+                "createLabel": "Create a new Trip",
+                "createOrEditLabel": "Create or edit a Trip"
+            },
+            "created": "A new Trip is created with identifier {{ param }}",
+            "updated": "A Trip is updated with identifier {{ param }}",
+            "deleted": "A Trip is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Trip {{ id }}?"
+            },
+            "detail": {
+                "title": "Trip"
+            },
+            "name": "Name",
+            "startLocationLat": "Start Location Lat",
+            "startLocationLong": "Start Location Long",
+            "endLocationLat": "End Location Lat",
+            "endLocationLong": "End Location Long",
+            "startTime": "Start Time",
+            "endTime": "End Time",
+            "isUploaded": "Is Uploaded",
+            "isFinished": "Is Finished",
+            "isPublished": "Is Published",
+            "publishedTime": "Published Time",
+            "isDeleted": "Is Deleted",
+            "featureImageLocalUri": "Feature Image Local Uri",
+            "featureImageRemoteUri": "Feature Image Remote Uri",
+            "noOfDays": "No Of Days",
+            "createdAt": "Created At",
+            "viewCount": "View Count",
+            "secretKey": "Secret Key",
+            "featured": "Featured",
+            "isHidden": "Is Hidden",
+            "tripSummary": "Trip Summary",
+            "tripSettings": "Trip Settings",
+            "day": "Day",
+            "tripPeople": "Trip People",
+            "user": "User",
+            "coupon": "Coupon"
+        }
+    }
+}

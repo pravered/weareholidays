@@ -1,0 +1,114 @@
+<div>
+    <h2 data-translate="weareholidaysApp.trip.home.title">Trips</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="trip.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="weareholidaysApp.trip.home.createLabel">
+                        Create new Trip
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="weareholidaysApp.trip.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="startLocationLat"><span data-translate="weareholidaysApp.trip.startLocationLat">Start Location Lat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="startLocationLong"><span data-translate="weareholidaysApp.trip.startLocationLong">Start Location Long</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="endLocationLat"><span data-translate="weareholidaysApp.trip.endLocationLat">End Location Lat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="endLocationLong"><span data-translate="weareholidaysApp.trip.endLocationLong">End Location Long</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="startTime"><span data-translate="weareholidaysApp.trip.startTime">Start Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="endTime"><span data-translate="weareholidaysApp.trip.endTime">End Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isUploaded"><span data-translate="weareholidaysApp.trip.isUploaded">Is Uploaded</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isFinished"><span data-translate="weareholidaysApp.trip.isFinished">Is Finished</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isPublished"><span data-translate="weareholidaysApp.trip.isPublished">Is Published</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="publishedTime"><span data-translate="weareholidaysApp.trip.publishedTime">Published Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isDeleted"><span data-translate="weareholidaysApp.trip.isDeleted">Is Deleted</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="featureImageLocalUri"><span data-translate="weareholidaysApp.trip.featureImageLocalUri">Feature Image Local Uri</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="featureImageRemoteUri"><span data-translate="weareholidaysApp.trip.featureImageRemoteUri">Feature Image Remote Uri</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="noOfDays"><span data-translate="weareholidaysApp.trip.noOfDays">No Of Days</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createdAt"><span data-translate="weareholidaysApp.trip.createdAt">Created At</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="viewCount"><span data-translate="weareholidaysApp.trip.viewCount">View Count</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="secretKey"><span data-translate="weareholidaysApp.trip.secretKey">Secret Key</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="featured"><span data-translate="weareholidaysApp.trip.featured">Featured</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="isHidden"><span data-translate="weareholidaysApp.trip.isHidden">Is Hidden</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="tripSummaryId"><span data-translate="weareholidaysApp.trip.tripSummary">Trip Summary</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="tripSettingsId"><span data-translate="weareholidaysApp.trip.tripSettings">Trip Settings</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="userLogin"><span data-translate="weareholidaysApp.trip.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="couponId"><span data-translate="weareholidaysApp.trip.coupon">Coupon</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="trip in vm.trips track by trip.id">
+                    <td><a ui-sref="trip-detail({id:trip.id})">{{trip.id}}</a></td>
+                    <td>{{trip.name}}</td>
+                    <td>{{trip.startLocationLat}}</td>
+                    <td>{{trip.startLocationLong}}</td>
+                    <td>{{trip.endLocationLat}}</td>
+                    <td>{{trip.endLocationLong}}</td>
+                    <td>{{trip.startTime}}</td>
+                    <td>{{trip.endTime}}</td>
+                    <td>{{trip.isUploaded}}</td>
+                    <td>{{trip.isFinished}}</td>
+                    <td>{{trip.isPublished}}</td>
+                    <td>{{trip.publishedTime}}</td>
+                    <td>{{trip.isDeleted}}</td>
+                    <td>{{trip.featureImageLocalUri}}</td>
+                    <td>{{trip.featureImageRemoteUri}}</td>
+                    <td>{{trip.noOfDays}}</td>
+                    <td>{{trip.createdAt}}</td>
+                    <td>{{trip.viewCount}}</td>
+                    <td>{{trip.secretKey}}</td>
+                    <td>{{trip.featured}}</td>
+                    <td>{{trip.isHidden}}</td>
+                    <td>
+                        <a ui-sref="trip-summary-detail({id:trip.tripSummaryId})">{{trip.tripSummaryId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="trip-settings-detail({id:trip.tripSettingsId})">{{trip.tripSettingsId}}</a>
+                    </td>
+                    <td>
+                        {{trip.userLogin}}
+                    </td>
+                    <td>
+                        <a ui-sref="coupon-detail({id:trip.couponId})">{{trip.couponId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="trip-detail({id:trip.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="trip.edit({id:trip.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="trip.delete({id:trip.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

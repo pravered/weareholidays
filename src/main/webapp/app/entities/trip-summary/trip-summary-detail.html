@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="weareholidaysApp.tripSummary.detail.title">Trip Summary</span> {{vm.tripSummary.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="weareholidaysApp.tripSummary.twitter">Twitter</span></dt>
+        <dd>
+            <span>{{vm.tripSummary.twitter}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSummary.fb">Fb</span></dt>
+        <dd>
+            <span>{{vm.tripSummary.fb}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSummary.instagram">Instagram</span></dt>
+        <dd>
+            <span>{{vm.tripSummary.instagram}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSummary.photos">Photos</span></dt>
+        <dd>
+            <span>{{vm.tripSummary.photos}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSummary.publicPhotos">Public Photos</span></dt>
+        <dd>
+            <span>{{vm.tripSummary.publicPhotos}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSummary.notes">Notes</span></dt>
+        <dd>
+            <span>{{vm.tripSummary.notes}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSummary.videos">Videos</span></dt>
+        <dd>
+            <span>{{vm.tripSummary.videos}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSummary.checkIns">Check Ins</span></dt>
+        <dd>
+            <span>{{vm.tripSummary.checkIns}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSummary.distance">Distance</span></dt>
+        <dd>
+            <span>{{vm.tripSummary.distance}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="trip-summary-detail.edit({id:vm.tripSummary.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

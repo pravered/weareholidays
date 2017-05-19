@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "daySummary",
+            "otherEntityName": "daySummary",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "day"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "displayOrder",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "locationLat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "locationLong",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170518090506",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "day",
+    "pagination": "pagination"
+}

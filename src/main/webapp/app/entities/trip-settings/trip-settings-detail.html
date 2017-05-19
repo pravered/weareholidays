@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span data-translate="weareholidaysApp.tripSettings.detail.title">Trip Settings</span> {{vm.tripSettings.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="weareholidaysApp.tripSettings.facebook">Facebook</span></dt>
+        <dd>
+            <span>{{vm.tripSettings.facebook}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSettings.twitter">Twitter</span></dt>
+        <dd>
+            <span>{{vm.tripSettings.twitter}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSettings.instagram">Instagram</span></dt>
+        <dd>
+            <span>{{vm.tripSettings.instagram}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSettings.location">Location</span></dt>
+        <dd>
+            <span>{{vm.tripSettings.location}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSettings.sync">Sync</span></dt>
+        <dd>
+            <span>{{vm.tripSettings.sync}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSettings.checkIn">Check In</span></dt>
+        <dd>
+            <span>{{vm.tripSettings.checkIn}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSettings.camerRoll">Camer Roll</span></dt>
+        <dd>
+            <span>{{vm.tripSettings.camerRoll}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSettings.cameraRollSyncTime">Camera Roll Sync Time</span></dt>
+        <dd>
+            <span>{{vm.tripSettings.cameraRollSyncTime}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSettings.facebookSyncTime">Facebook Sync Time</span></dt>
+        <dd>
+            <span>{{vm.tripSettings.facebookSyncTime}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSettings.twitterSinceId">Twitter Since Id</span></dt>
+        <dd>
+            <span>{{vm.tripSettings.twitterSinceId}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripSettings.instagramSyncTime">Instagram Sync Time</span></dt>
+        <dd>
+            <span>{{vm.tripSettings.instagramSyncTime}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="trip-settings-detail.edit({id:vm.tripSettings.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

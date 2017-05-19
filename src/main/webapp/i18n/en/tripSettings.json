@@ -1,0 +1,31 @@
+{
+    "weareholidaysApp": {
+        "tripSettings" : {
+            "home": {
+                "title": "Trip Settings",
+                "createLabel": "Create a new Trip Settings",
+                "createOrEditLabel": "Create or edit a Trip Settings"
+            },
+            "created": "A new Trip Settings is created with identifier {{ param }}",
+            "updated": "A Trip Settings is updated with identifier {{ param }}",
+            "deleted": "A Trip Settings is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Trip Settings {{ id }}?"
+            },
+            "detail": {
+                "title": "Trip Settings"
+            },
+            "facebook": "Facebook",
+            "twitter": "Twitter",
+            "instagram": "Instagram",
+            "location": "Location",
+            "sync": "Sync",
+            "checkIn": "Check In",
+            "camerRoll": "Camer Roll",
+            "cameraRollSyncTime": "Camera Roll Sync Time",
+            "facebookSyncTime": "Facebook Sync Time",
+            "twitterSinceId": "Twitter Since Id",
+            "instagramSyncTime": "Instagram Sync Time"
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "objectId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "message",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validFrom",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "validTill",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "publishedMessage",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170518092923",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "coupon",
+    "pagination": "pagination"
+}

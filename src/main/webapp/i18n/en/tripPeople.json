@@ -1,0 +1,29 @@
+{
+    "weareholidaysApp": {
+        "tripPeople" : {
+            "home": {
+                "title": "Trip People",
+                "createLabel": "Create a new Trip People",
+                "createOrEditLabel": "Create or edit a Trip People"
+            },
+            "created": "A new Trip People is created with identifier {{ param }}",
+            "updated": "A Trip People is updated with identifier {{ param }}",
+            "deleted": "A Trip People is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Trip People {{ id }}?"
+            },
+            "detail": {
+                "title": "Trip People"
+            },
+            "phoneBookType": "Phone Book Type",
+            "facebookType": "Facebook Type",
+            "name": "Name",
+            "email": "Email",
+            "imageLocalUri": "Image Local Uri",
+            "imageRemoteUri": "Image Remote Uri",
+            "type": "Type",
+            "inTrip": "In Trip",
+            "identifier": "Identifier"
+        }
+    }
+}

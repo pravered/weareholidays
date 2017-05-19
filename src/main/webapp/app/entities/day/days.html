@@ -1,0 +1,78 @@
+<div>
+    <h2 data-translate="weareholidaysApp.day.home.title">Days</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="day.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="weareholidaysApp.day.home.createLabel">
+                        Create new Day
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="weareholidaysApp.day.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="displayOrder"><span data-translate="weareholidaysApp.day.displayOrder">Display Order</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="startTime"><span data-translate="weareholidaysApp.day.startTime">Start Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="endTime"><span data-translate="weareholidaysApp.day.endTime">End Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="locationLat"><span data-translate="weareholidaysApp.day.locationLat">Location Lat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="locationLong"><span data-translate="weareholidaysApp.day.locationLong">Location Long</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="city"><span data-translate="weareholidaysApp.day.city">City</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="country"><span data-translate="weareholidaysApp.day.country">Country</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="daySummaryId"><span data-translate="weareholidaysApp.day.daySummary">Day Summary</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="day in vm.days track by day.id">
+                    <td><a ui-sref="day-detail({id:day.id})">{{day.id}}</a></td>
+                    <td>{{day.name}}</td>
+                    <td>{{day.displayOrder}}</td>
+                    <td>{{day.startTime}}</td>
+                    <td>{{day.endTime}}</td>
+                    <td>{{day.locationLat}}</td>
+                    <td>{{day.locationLong}}</td>
+                    <td>{{day.city}}</td>
+                    <td>{{day.country}}</td>
+                    <td>
+                        <a ui-sref="day-summary-detail({id:day.daySummaryId})">{{day.daySummaryId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="day-detail({id:day.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="day.edit({id:day.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="day.delete({id:day.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

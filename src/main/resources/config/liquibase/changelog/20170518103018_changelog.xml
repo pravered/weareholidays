@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="beehyv (generated)" id="1495103430345-1">
+        <addColumn tableName="day">
+            <column name="trip_id" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495103430345-2">
+        <addColumn tableName="trip_people">
+            <column name="trip_id" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495103430345-3">
+        <addUniqueConstraint columnNames="day_summary_id" constraintName="UC_DAYDAY_SUMMARY_ID_COL" tableName="day"/>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495103430345-6">
+        <addUniqueConstraint columnNames="coupon_id" constraintName="UC_TRIPCOUPON_ID_COL" tableName="trip"/>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495103430345-7">
+        <addUniqueConstraint columnNames="trip_settings_id" constraintName="UC_TRIPTRIP_SETTINGS_ID_COL" tableName="trip"/>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495103430345-8">
+        <addUniqueConstraint columnNames="trip_summary_id" constraintName="UC_TRIPTRIP_SUMMARY_ID_COL" tableName="trip"/>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495103430345-9">
+        <addForeignKeyConstraint baseColumnNames="trip_id" baseTableName="trip_people" constraintName="FK829ucjsvmy3j1xb86fw7uyol" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="trip"/>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495103430345-10">
+        <addForeignKeyConstraint baseColumnNames="trip_id" baseTableName="day" constraintName="FKnrgh0h8svf0swt0kscy81hf0b" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="trip"/>
+    </changeSet>
+</databaseChangeLog>

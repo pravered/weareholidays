@@ -1,0 +1,29 @@
+{
+    "weareholidaysApp": {
+        "tripSummary" : {
+            "home": {
+                "title": "Trip Summaries",
+                "createLabel": "Create a new Trip Summary",
+                "createOrEditLabel": "Create or edit a Trip Summary"
+            },
+            "created": "A new Trip Summary is created with identifier {{ param }}",
+            "updated": "A Trip Summary is updated with identifier {{ param }}",
+            "deleted": "A Trip Summary is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Trip Summary {{ id }}?"
+            },
+            "detail": {
+                "title": "Trip Summary"
+            },
+            "twitter": "Twitter",
+            "fb": "Fb",
+            "instagram": "Instagram",
+            "photos": "Photos",
+            "publicPhotos": "Public Photos",
+            "notes": "Notes",
+            "videos": "Videos",
+            "checkIns": "Check Ins",
+            "distance": "Distance"
+        }
+    }
+}

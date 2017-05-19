@@ -1,0 +1,49 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="beehyv (generated)" id="1495021990509-1">
+        <addColumn tableName="jhi_user">
+            <column name="gender" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495021990509-2">
+        <addColumn tableName="jhi_user">
+            <column name="name" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495021990509-3">
+        <addColumn tableName="jhi_user">
+            <column name="phone" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495021990509-4">
+        <addColumn tableName="jhi_user">
+            <column name="place" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495021990509-5">
+        <addColumn tableName="jhi_user">
+            <column name="profile_image_local_url" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495021990509-6">
+        <addColumn tableName="jhi_user">
+            <column name="total_published_trips" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495021990509-7">
+        <addColumn tableName="jhi_user">
+            <column name="total_trips" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495021990509-8">
+        <addColumn tableName="jhi_user">
+            <column name="user_name" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495021990509-9">
+        <addUniqueConstraint columnNames="email" constraintName="UC_JHI_USEREMAIL_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="beehyv (generated)" id="1495021990509-10">
+        <addUniqueConstraint columnNames="login" constraintName="UC_JHI_USERLOGIN_COL" tableName="jhi_user"/>
+    </changeSet>
+</databaseChangeLog>

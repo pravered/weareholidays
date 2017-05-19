@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="weareholidaysApp.tripPeople.detail.title">Trip People</span> {{vm.tripPeople.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="weareholidaysApp.tripPeople.phoneBookType">Phone Book Type</span></dt>
+        <dd>
+            <span>{{vm.tripPeople.phoneBookType}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripPeople.facebookType">Facebook Type</span></dt>
+        <dd>
+            <span>{{vm.tripPeople.facebookType}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripPeople.name">Name</span></dt>
+        <dd>
+            <span>{{vm.tripPeople.name}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripPeople.email">Email</span></dt>
+        <dd>
+            <span>{{vm.tripPeople.email}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripPeople.imageLocalUri">Image Local Uri</span></dt>
+        <dd>
+            <span>{{vm.tripPeople.imageLocalUri}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripPeople.imageRemoteUri">Image Remote Uri</span></dt>
+        <dd>
+            <span>{{vm.tripPeople.imageRemoteUri}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripPeople.type">Type</span></dt>
+        <dd>
+            <span>{{vm.tripPeople.type}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripPeople.inTrip">In Trip</span></dt>
+        <dd>
+            <span>{{vm.tripPeople.inTrip}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.tripPeople.identifier">Identifier</span></dt>
+        <dd>
+            <span>{{vm.tripPeople.identifier}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="trip-people-detail.edit({id:vm.tripPeople.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

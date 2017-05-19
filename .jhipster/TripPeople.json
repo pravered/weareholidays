@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "phoneBookType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "facebookType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageLocalUri",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageRemoteUri",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inTrip",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "identifier",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170518094353",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "trip_people",
+    "pagination": "pagination"
+}

@@ -1,0 +1,76 @@
+<div>
+    <h2 data-translate="weareholidaysApp.tripSummary.home.title">Trip Summaries</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="trip-summary.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="weareholidaysApp.tripSummary.home.createLabel">
+                        Create new Trip Summary
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="twitter"><span data-translate="weareholidaysApp.tripSummary.twitter">Twitter</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fb"><span data-translate="weareholidaysApp.tripSummary.fb">Fb</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="instagram"><span data-translate="weareholidaysApp.tripSummary.instagram">Instagram</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="photos"><span data-translate="weareholidaysApp.tripSummary.photos">Photos</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="publicPhotos"><span data-translate="weareholidaysApp.tripSummary.publicPhotos">Public Photos</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="notes"><span data-translate="weareholidaysApp.tripSummary.notes">Notes</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="videos"><span data-translate="weareholidaysApp.tripSummary.videos">Videos</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="checkIns"><span data-translate="weareholidaysApp.tripSummary.checkIns">Check Ins</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="distance"><span data-translate="weareholidaysApp.tripSummary.distance">Distance</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tripSummary in vm.tripSummaries track by tripSummary.id">
+                    <td><a ui-sref="trip-summary-detail({id:tripSummary.id})">{{tripSummary.id}}</a></td>
+                    <td>{{tripSummary.twitter}}</td>
+                    <td>{{tripSummary.fb}}</td>
+                    <td>{{tripSummary.instagram}}</td>
+                    <td>{{tripSummary.photos}}</td>
+                    <td>{{tripSummary.publicPhotos}}</td>
+                    <td>{{tripSummary.notes}}</td>
+                    <td>{{tripSummary.videos}}</td>
+                    <td>{{tripSummary.checkIns}}</td>
+                    <td>{{tripSummary.distance}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="trip-summary-detail({id:tripSummary.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="trip-summary.edit({id:tripSummary.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="trip-summary.delete({id:tripSummary.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

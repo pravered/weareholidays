@@ -1,0 +1,115 @@
+
+<div>
+    <h2><span data-translate="weareholidaysApp.trip.detail.title">Trip</span> {{vm.trip.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="weareholidaysApp.trip.name">Name</span></dt>
+        <dd>
+            <span>{{vm.trip.name}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.startLocationLat">Start Location Lat</span></dt>
+        <dd>
+            <span>{{vm.trip.startLocationLat}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.startLocationLong">Start Location Long</span></dt>
+        <dd>
+            <span>{{vm.trip.startLocationLong}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.endLocationLat">End Location Lat</span></dt>
+        <dd>
+            <span>{{vm.trip.endLocationLat}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.endLocationLong">End Location Long</span></dt>
+        <dd>
+            <span>{{vm.trip.endLocationLong}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.startTime">Start Time</span></dt>
+        <dd>
+            <span>{{vm.trip.startTime}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.endTime">End Time</span></dt>
+        <dd>
+            <span>{{vm.trip.endTime}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.isUploaded">Is Uploaded</span></dt>
+        <dd>
+            <span>{{vm.trip.isUploaded}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.isFinished">Is Finished</span></dt>
+        <dd>
+            <span>{{vm.trip.isFinished}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.isPublished">Is Published</span></dt>
+        <dd>
+            <span>{{vm.trip.isPublished}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.publishedTime">Published Time</span></dt>
+        <dd>
+            <span>{{vm.trip.publishedTime}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.isDeleted">Is Deleted</span></dt>
+        <dd>
+            <span>{{vm.trip.isDeleted}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.featureImageLocalUri">Feature Image Local Uri</span></dt>
+        <dd>
+            <span>{{vm.trip.featureImageLocalUri}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.featureImageRemoteUri">Feature Image Remote Uri</span></dt>
+        <dd>
+            <span>{{vm.trip.featureImageRemoteUri}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.noOfDays">No Of Days</span></dt>
+        <dd>
+            <span>{{vm.trip.noOfDays}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.createdAt">Created At</span></dt>
+        <dd>
+            <span>{{vm.trip.createdAt}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.viewCount">View Count</span></dt>
+        <dd>
+            <span>{{vm.trip.viewCount}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.secretKey">Secret Key</span></dt>
+        <dd>
+            <span>{{vm.trip.secretKey}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.featured">Featured</span></dt>
+        <dd>
+            <span>{{vm.trip.featured}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.isHidden">Is Hidden</span></dt>
+        <dd>
+            <span>{{vm.trip.isHidden}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.tripSummary">Trip Summary</span></dt>
+        <dd>
+            <a ui-sref="trip-summary-detail({id:vm.trip.tripSummaryId})">{{vm.trip.tripSummaryId}}</a>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.tripSettings">Trip Settings</span></dt>
+        <dd>
+            <a ui-sref="trip-settings-detail({id:vm.trip.tripSettingsId})">{{vm.trip.tripSettingsId}}</a>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.user">User</span></dt>
+        <dd>
+            {{vm.trip.userLogin}}
+        </dd>
+        <dt><span data-translate="weareholidaysApp.trip.coupon">Coupon</span></dt>
+        <dd>
+            <a ui-sref="coupon-detail({id:vm.trip.couponId})">{{vm.trip.couponId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="trip-detail.edit({id:vm.trip.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

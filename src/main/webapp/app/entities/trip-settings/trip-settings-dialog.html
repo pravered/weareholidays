@@ -1,0 +1,85 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTripSettingsLabel" data-translate="weareholidaysApp.tripSettings.home.createOrEditLabel">Create or edit a Trip Settings</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.tripSettings.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.tripSettings.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripSettings.facebook" for="field_facebook">Facebook</label>
+                <input type="checkbox" name="facebook" id="field_facebook"
+                          ng-model="vm.tripSettings.facebook"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripSettings.twitter" for="field_twitter">Twitter</label>
+                <input type="checkbox" name="twitter" id="field_twitter"
+                          ng-model="vm.tripSettings.twitter"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripSettings.instagram" for="field_instagram">Instagram</label>
+                <input type="checkbox" name="instagram" id="field_instagram"
+                          ng-model="vm.tripSettings.instagram"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripSettings.location" for="field_location">Location</label>
+                <input type="checkbox" name="location" id="field_location"
+                          ng-model="vm.tripSettings.location"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripSettings.sync" for="field_sync">Sync</label>
+                <input type="checkbox" name="sync" id="field_sync"
+                          ng-model="vm.tripSettings.sync"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripSettings.checkIn" for="field_checkIn">Check In</label>
+                <input type="checkbox" name="checkIn" id="field_checkIn"
+                          ng-model="vm.tripSettings.checkIn"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripSettings.camerRoll" for="field_camerRoll">Camer Roll</label>
+                <input type="checkbox" name="camerRoll" id="field_camerRoll"
+                          ng-model="vm.tripSettings.camerRoll"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripSettings.cameraRollSyncTime" for="field_cameraRollSyncTime">Camera Roll Sync Time</label>
+            <input type="number" class="form-control" name="cameraRollSyncTime" id="field_cameraRollSyncTime"
+                    ng-model="vm.tripSettings.cameraRollSyncTime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripSettings.facebookSyncTime" for="field_facebookSyncTime">Facebook Sync Time</label>
+            <input type="number" class="form-control" name="facebookSyncTime" id="field_facebookSyncTime"
+                    ng-model="vm.tripSettings.facebookSyncTime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripSettings.twitterSinceId" for="field_twitterSinceId">Twitter Since Id</label>
+            <input type="number" class="form-control" name="twitterSinceId" id="field_twitterSinceId"
+                    ng-model="vm.tripSettings.twitterSinceId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.tripSettings.instagramSyncTime" for="field_instagramSyncTime">Instagram Sync Time</label>
+            <input type="number" class="form-control" name="instagramSyncTime" id="field_instagramSyncTime"
+                    ng-model="vm.tripSettings.instagramSyncTime"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

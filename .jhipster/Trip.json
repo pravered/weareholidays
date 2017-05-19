@@ -1,0 +1,136 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "tripSummary",
+            "otherEntityName": "tripSummary",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "trip"
+        },
+        {
+            "relationshipName": "tripSettings",
+            "otherEntityName": "tripSettings",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "trip"
+        },
+        {
+            "relationshipName": "day",
+            "otherEntityName": "day",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "trip"
+        },
+        {
+            "relationshipName": "tripPeople",
+            "otherEntityName": "tripPeople",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "trip"
+        },
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "trip"
+        },
+        {
+            "relationshipName": "coupon",
+            "otherEntityName": "coupon",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "trip"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startLocationLat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "startLocationLong",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "endLocationLat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "endLocationLong",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "isUploaded",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isFinished",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isPublished",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "publishedTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "isDeleted",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "featureImageLocalUri",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "featureImageRemoteUri",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "noOfDays",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createdAt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "viewCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "secretKey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "featured",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isHidden",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170518100821",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "trip",
+    "pagination": "pagination"
+}

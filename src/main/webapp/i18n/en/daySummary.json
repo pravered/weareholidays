@@ -1,0 +1,29 @@
+{
+    "weareholidaysApp": {
+        "daySummary" : {
+            "home": {
+                "title": "Day Summaries",
+                "createLabel": "Create a new Day Summary",
+                "createOrEditLabel": "Create or edit a Day Summary"
+            },
+            "created": "A new Day Summary is created with identifier {{ param }}",
+            "updated": "A Day Summary is updated with identifier {{ param }}",
+            "deleted": "A Day Summary is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Day Summary {{ id }}?"
+            },
+            "detail": {
+                "title": "Day Summary"
+            },
+            "twitter": "Twitter",
+            "fb": "Fb",
+            "instagram": "Instagram",
+            "photos": "Photos",
+            "publicPhotos": "Public Photos",
+            "notes": "Notes",
+            "videos": "Videos",
+            "checkIns": "Check Ins",
+            "distance": "Distance"
+        }
+    }
+}
