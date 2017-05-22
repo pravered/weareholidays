@@ -46,7 +46,7 @@ public class Day implements Serializable {
     @Column(name = "country")
     private String country;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
     private DaySummary daySummary;
 

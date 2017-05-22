@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 public class TripServiceImpl implements TripService{
 
     private final Logger log = LoggerFactory.getLogger(TripServiceImpl.class);
-    
+
     private final TripRepository tripRepository;
 
     private final TripMapper tripMapper;
@@ -32,6 +32,19 @@ public class TripServiceImpl implements TripService{
     public TripServiceImpl(TripRepository tripRepository, TripMapper tripMapper) {
         this.tripRepository = tripRepository;
         this.tripMapper = tripMapper;
+    }
+
+    @Override
+    public List<TripDTO> getPublishedTripsForUser() {
+        return tripMapper.tripsToTripDTOs(tripRepository.getPublishedTripsOfUser());
+    }
+
+    @Override
+    public Page<TripDTO> getAllPublishedTrips(Pageable pageable) {
+
+        Page<Trip> result = tripRepository.findAll(pageable);
+        return result.map(trip -> tripMapper.tripToTripDTO(trip));
+//        return tripMapper.tripsToTripDTOs(tripRepository.getAllPublishedTrips());
     }
 
     /**
@@ -51,7 +64,7 @@ public class TripServiceImpl implements TripService{
 
     /**
      *  Get all the trips.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */

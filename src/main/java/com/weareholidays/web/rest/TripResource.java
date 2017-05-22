@@ -2,6 +2,7 @@ package com.weareholidays.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.weareholidays.service.TripService;
+import com.weareholidays.service.dto.DayDTO;
 import com.weareholidays.web.rest.util.HeaderUtil;
 import com.weareholidays.web.rest.util.PaginationUtil;
 import com.weareholidays.service.dto.TripDTO;
@@ -33,7 +34,7 @@ public class TripResource {
     private final Logger log = LoggerFactory.getLogger(TripResource.class);
 
     private static final String ENTITY_NAME = "trip";
-        
+
     private final TripService tripService;
 
     public TripResource(TripService tripService) {
@@ -125,4 +126,23 @@ public class TripResource {
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 
+    @GetMapping("/get-published-trips-of-user")
+    @Timed
+    public ResponseEntity<List<TripDTO>> getPublishedTripsOfUser(){
+        List<TripDTO> tripDTOs = tripService.getPublishedTripsForUser();
+//        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(dayDTOs));
+
+//        Page<DayDTO> page = dayService.findAll(pageable);
+//        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/days");
+//        return new ResponseEntity<>(dayDTOs, headers, HttpStatus.OK);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(tripDTOs));
+    }
+
+    @GetMapping("/get-all-published-trips")
+    @Timed
+    public ResponseEntity<List<TripDTO>> getAllPublishedTrips(@ApiParam Pageable pageable){
+        Page<TripDTO> page = tripService.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/getAllPublishedTrips");
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
 }

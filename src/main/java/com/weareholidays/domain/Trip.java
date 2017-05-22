@@ -85,11 +85,11 @@ public class Trip implements Serializable {
     @Column(name = "is_hidden")
     private Boolean isHidden;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
     private TripSummary tripSummary;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
     private TripSettings tripSettings;
 

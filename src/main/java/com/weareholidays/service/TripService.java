@@ -10,6 +10,9 @@ import java.util.List;
  */
 public interface TripService {
 
+    List<TripDTO> getPublishedTripsForUser();
+
+    Page<TripDTO> getAllPublishedTrips(Pageable pageable);
     /**
      * Save a trip.
      *
@@ -20,7 +23,7 @@ public interface TripService {
 
     /**
      *  Get all the trips.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
