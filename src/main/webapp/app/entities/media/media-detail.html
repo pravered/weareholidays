@@ -1,0 +1,83 @@
+
+<div>
+    <h2><span data-translate="weareholidaysApp.media.detail.title">Media</span> {{vm.media.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="weareholidaysApp.media.contentLocalUrl">Content Local Url</span></dt>
+        <dd>
+            <span>{{vm.media.contentLocalUrl}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.contentRemoteUrl">Content Remote Url</span></dt>
+        <dd>
+            <span>{{vm.media.contentRemoteUrl}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.caption">Caption</span></dt>
+        <dd>
+            <span>{{vm.media.caption}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.locationLat">Location Lat</span></dt>
+        <dd>
+            <span>{{vm.media.locationLat}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.locationLong">Location Long</span></dt>
+        <dd>
+            <span>{{vm.media.locationLong}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.isPrivate">Is Private</span></dt>
+        <dd>
+            <span>{{vm.media.isPrivate}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.address">Address</span></dt>
+        <dd>
+            <span>{{vm.media.address}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.contentCreationTime">Content Creation Time</span></dt>
+        <dd>
+            <span>{{vm.media.contentCreationTime}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.contentSize">Content Size</span></dt>
+        <dd>
+            <span>{{vm.media.contentSize}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.mediaWidth">Media Width</span></dt>
+        <dd>
+            <span>{{vm.media.mediaWidth}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.mediaHeight">Media Height</span></dt>
+        <dd>
+            <span>{{vm.media.mediaHeight}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.thirdPartyId">Third Party Id</span></dt>
+        <dd>
+            <span>{{vm.media.thirdPartyId}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.thirdPartyUrl">Third Party Url</span></dt>
+        <dd>
+            <span>{{vm.media.thirdPartyUrl}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.mediaSource">Media Source</span></dt>
+        <dd>
+            <span>{{vm.media.mediaSource}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.fetchingAddress">Fetching Address</span></dt>
+        <dd>
+            <span>{{vm.media.fetchingAddress}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.media.album">Album</span></dt>
+        <dd>
+            <a ui-sref="album-detail({id:vm.media.albumId})">{{vm.media.albumId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="media-detail.edit({id:vm.media.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

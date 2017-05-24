@@ -1,0 +1,74 @@
+<div>
+    <h2 data-translate="weareholidaysApp.checkIn.home.title">Check Ins</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="check-in.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="weareholidaysApp.checkIn.home.createLabel">
+                        Create new Check In
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="locationLat"><span data-translate="weareholidaysApp.checkIn.locationLat">Location Lat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="locationLong"><span data-translate="weareholidaysApp.checkIn.locationLong">Location Long</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="weareholidaysApp.checkIn.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="locationText"><span data-translate="weareholidaysApp.checkIn.locationText">Location Text</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="placeId"><span data-translate="weareholidaysApp.checkIn.placeId">Place Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="photoReference"><span data-translate="weareholidaysApp.checkIn.photoReference">Photo Reference</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="mapImageLocalUri"><span data-translate="weareholidaysApp.checkIn.mapImageLocalUri">Map Image Local Uri</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="mapImageRemoteUri"><span data-translate="weareholidaysApp.checkIn.mapImageRemoteUri">Map Image Remote Uri</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="checkIn in vm.checkIns track by checkIn.id">
+                    <td><a ui-sref="check-in-detail({id:checkIn.id})">{{checkIn.id}}</a></td>
+                    <td>{{checkIn.locationLat}}</td>
+                    <td>{{checkIn.locationLong}}</td>
+                    <td>{{checkIn.name}}</td>
+                    <td>{{checkIn.locationText}}</td>
+                    <td>{{checkIn.placeId}}</td>
+                    <td>{{checkIn.photoReference}}</td>
+                    <td>{{checkIn.mapImageLocalUri}}</td>
+                    <td>{{checkIn.mapImageRemoteUri}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="check-in-detail({id:checkIn.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="check-in.edit({id:checkIn.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="check-in.delete({id:checkIn.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

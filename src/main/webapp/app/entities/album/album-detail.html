@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span data-translate="weareholidaysApp.album.detail.title">Album</span> {{vm.album.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="weareholidaysApp.album.content">Content</span></dt>
+        <dd>
+            <span>{{vm.album.content}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.album.mediaCount">Media Count</span></dt>
+        <dd>
+            <span>{{vm.album.mediaCount}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.album.publicMediaCount">Public Media Count</span></dt>
+        <dd>
+            <span>{{vm.album.publicMediaCount}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.album.locationLat">Location Lat</span></dt>
+        <dd>
+            <span>{{vm.album.locationLat}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.album.locationLong">Location Long</span></dt>
+        <dd>
+            <span>{{vm.album.locationLong}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.album.locationText">Location Text</span></dt>
+        <dd>
+            <span>{{vm.album.locationText}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.album.startTime">Start Time</span></dt>
+        <dd>
+            <span>{{vm.album.startTime}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.album.endTime">End Time</span></dt>
+        <dd>
+            <span>{{vm.album.endTime}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.album.source">Source</span></dt>
+        <dd>
+            <span>{{vm.album.source}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.album.category">Category</span></dt>
+        <dd>
+            <span>{{vm.album.category}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="album-detail.edit({id:vm.album.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

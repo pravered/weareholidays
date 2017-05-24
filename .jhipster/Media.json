@@ -1,0 +1,78 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "album",
+            "otherEntityName": "album",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "contentLocalUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contentRemoteUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "caption",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "locationLat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "locationLong",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "isPrivate",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contentCreationTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "contentSize",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "mediaWidth",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "mediaHeight",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thirdPartyId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "thirdPartyUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mediaSource",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fetchingAddress",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170524094147",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "media",
+    "pagination": "pagination"
+}

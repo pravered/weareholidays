@@ -1,0 +1,120 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMediaLabel" data-translate="weareholidaysApp.media.home.createOrEditLabel">Create or edit a Media</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.media.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.media.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.contentLocalUrl" for="field_contentLocalUrl">Content Local Url</label>
+            <input type="text" class="form-control" name="contentLocalUrl" id="field_contentLocalUrl"
+                    ng-model="vm.media.contentLocalUrl"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.contentRemoteUrl" for="field_contentRemoteUrl">Content Remote Url</label>
+            <input type="text" class="form-control" name="contentRemoteUrl" id="field_contentRemoteUrl"
+                    ng-model="vm.media.contentRemoteUrl"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.caption" for="field_caption">Caption</label>
+            <input type="text" class="form-control" name="caption" id="field_caption"
+                    ng-model="vm.media.caption"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.locationLat" for="field_locationLat">Location Lat</label>
+            <input type="number" class="form-control" name="locationLat" id="field_locationLat"
+                    ng-model="vm.media.locationLat"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.locationLong" for="field_locationLong">Location Long</label>
+            <input type="number" class="form-control" name="locationLong" id="field_locationLong"
+                    ng-model="vm.media.locationLong"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.isPrivate" for="field_isPrivate">Is Private</label>
+                <input type="checkbox" name="isPrivate" id="field_isPrivate"
+                          ng-model="vm.media.isPrivate"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.address" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                    ng-model="vm.media.address"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.contentCreationTime" for="field_contentCreationTime">Content Creation Time</label>
+            <input type="number" class="form-control" name="contentCreationTime" id="field_contentCreationTime"
+                    ng-model="vm.media.contentCreationTime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.contentSize" for="field_contentSize">Content Size</label>
+            <input type="number" class="form-control" name="contentSize" id="field_contentSize"
+                    ng-model="vm.media.contentSize"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.mediaWidth" for="field_mediaWidth">Media Width</label>
+            <input type="number" class="form-control" name="mediaWidth" id="field_mediaWidth"
+                    ng-model="vm.media.mediaWidth"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.mediaHeight" for="field_mediaHeight">Media Height</label>
+            <input type="number" class="form-control" name="mediaHeight" id="field_mediaHeight"
+                    ng-model="vm.media.mediaHeight"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.thirdPartyId" for="field_thirdPartyId">Third Party Id</label>
+            <input type="text" class="form-control" name="thirdPartyId" id="field_thirdPartyId"
+                    ng-model="vm.media.thirdPartyId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.thirdPartyUrl" for="field_thirdPartyUrl">Third Party Url</label>
+            <input type="text" class="form-control" name="thirdPartyUrl" id="field_thirdPartyUrl"
+                    ng-model="vm.media.thirdPartyUrl"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.mediaSource" for="field_mediaSource">Media Source</label>
+            <input type="text" class="form-control" name="mediaSource" id="field_mediaSource"
+                    ng-model="vm.media.mediaSource"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.media.fetchingAddress" for="field_fetchingAddress">Fetching Address</label>
+                <input type="checkbox" name="fetchingAddress" id="field_fetchingAddress"
+                          ng-model="vm.media.fetchingAddress"/>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="weareholidaysApp.media.album" for="field_album">Album</label>
+            <select class="form-control" id="field_album" name="album" ng-model="vm.media.albumId" ng-options="album.id as album.id for album in vm.albums"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

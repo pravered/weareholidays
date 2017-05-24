@@ -1,0 +1,86 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAlbumLabel" data-translate="weareholidaysApp.album.home.createOrEditLabel">Create or edit a Album</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.album.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.album.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.album.content" for="field_content">Content</label>
+            <input type="text" class="form-control" name="content" id="field_content"
+                    ng-model="vm.album.content"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.album.mediaCount" for="field_mediaCount">Media Count</label>
+            <input type="number" class="form-control" name="mediaCount" id="field_mediaCount"
+                    ng-model="vm.album.mediaCount"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.album.publicMediaCount" for="field_publicMediaCount">Public Media Count</label>
+            <input type="number" class="form-control" name="publicMediaCount" id="field_publicMediaCount"
+                    ng-model="vm.album.publicMediaCount"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.album.locationLat" for="field_locationLat">Location Lat</label>
+            <input type="number" class="form-control" name="locationLat" id="field_locationLat"
+                    ng-model="vm.album.locationLat"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.album.locationLong" for="field_locationLong">Location Long</label>
+            <input type="number" class="form-control" name="locationLong" id="field_locationLong"
+                    ng-model="vm.album.locationLong"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.album.locationText" for="field_locationText">Location Text</label>
+            <input type="text" class="form-control" name="locationText" id="field_locationText"
+                    ng-model="vm.album.locationText"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.album.startTime" for="field_startTime">Start Time</label>
+            <input type="number" class="form-control" name="startTime" id="field_startTime"
+                    ng-model="vm.album.startTime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.album.endTime" for="field_endTime">End Time</label>
+            <input type="number" class="form-control" name="endTime" id="field_endTime"
+                    ng-model="vm.album.endTime"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.album.source" for="field_source">Source</label>
+            <input type="text" class="form-control" name="source" id="field_source"
+                    ng-model="vm.album.source"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.album.category" for="field_category">Category</label>
+            <input type="text" class="form-control" name="category" id="field_category"
+                    ng-model="vm.album.category"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

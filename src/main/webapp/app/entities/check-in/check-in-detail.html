@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="weareholidaysApp.checkIn.detail.title">Check In</span> {{vm.checkIn.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="weareholidaysApp.checkIn.locationLat">Location Lat</span></dt>
+        <dd>
+            <span>{{vm.checkIn.locationLat}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.checkIn.locationLong">Location Long</span></dt>
+        <dd>
+            <span>{{vm.checkIn.locationLong}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.checkIn.name">Name</span></dt>
+        <dd>
+            <span>{{vm.checkIn.name}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.checkIn.locationText">Location Text</span></dt>
+        <dd>
+            <span>{{vm.checkIn.locationText}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.checkIn.placeId">Place Id</span></dt>
+        <dd>
+            <span>{{vm.checkIn.placeId}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.checkIn.photoReference">Photo Reference</span></dt>
+        <dd>
+            <span>{{vm.checkIn.photoReference}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.checkIn.mapImageLocalUri">Map Image Local Uri</span></dt>
+        <dd>
+            <span>{{vm.checkIn.mapImageLocalUri}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.checkIn.mapImageRemoteUri">Map Image Remote Uri</span></dt>
+        <dd>
+            <span>{{vm.checkIn.mapImageRemoteUri}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="check-in-detail.edit({id:vm.checkIn.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

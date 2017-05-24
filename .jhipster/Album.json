@@ -1,0 +1,58 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "media",
+            "otherEntityName": "media",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "album"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "content",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mediaCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "publicMediaCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "locationLat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "locationLong",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "locationText",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "category",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170524094431",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "album",
+    "pagination": "pagination"
+}

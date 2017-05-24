@@ -14,9 +14,14 @@
     <include file="classpath:config/liquibase/changelog/20170518092923_added_entity_Coupon.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170518094353_added_entity_TripPeople.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170518100821_added_entity_Trip.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524092714_added_entity_Note.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524093237_added_entity_CheckIn.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524094147_added_entity_Media.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524094431_added_entity_Album.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="classpath:config/liquibase/changelog/20170518090506_added_entity_constraints_Day.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170518100821_added_entity_constraints_Trip.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170518103018_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524094147_added_entity_constraints_Media.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

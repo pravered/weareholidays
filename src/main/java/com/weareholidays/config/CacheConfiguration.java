@@ -49,6 +49,11 @@ public class CacheConfiguration {
             cm.createCache(com.weareholidays.domain.Trip.class.getName(), jcacheConfiguration);
             cm.createCache(com.weareholidays.domain.Trip.class.getName() + ".days", jcacheConfiguration);
             cm.createCache(com.weareholidays.domain.Trip.class.getName() + ".tripPeople", jcacheConfiguration);
+            cm.createCache(com.weareholidays.domain.Note.class.getName(), jcacheConfiguration);
+            cm.createCache(com.weareholidays.domain.CheckIn.class.getName(), jcacheConfiguration);
+            cm.createCache(com.weareholidays.domain.Media.class.getName(), jcacheConfiguration);
+            cm.createCache(com.weareholidays.domain.Album.class.getName(), jcacheConfiguration);
+            cm.createCache(com.weareholidays.domain.Album.class.getName() + ".media", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

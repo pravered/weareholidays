@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "content",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "locationLat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "locationLong",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "locationText",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "placeId",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170524092714",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "note",
+    "pagination": "pagination"
+}

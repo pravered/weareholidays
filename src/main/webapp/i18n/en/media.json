@@ -1,0 +1,36 @@
+{
+    "weareholidaysApp": {
+        "media" : {
+            "home": {
+                "title": "Media",
+                "createLabel": "Create a new Media",
+                "createOrEditLabel": "Create or edit a Media"
+            },
+            "created": "A new Media is created with identifier {{ param }}",
+            "updated": "A Media is updated with identifier {{ param }}",
+            "deleted": "A Media is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Media {{ id }}?"
+            },
+            "detail": {
+                "title": "Media"
+            },
+            "contentLocalUrl": "Content Local Url",
+            "contentRemoteUrl": "Content Remote Url",
+            "caption": "Caption",
+            "locationLat": "Location Lat",
+            "locationLong": "Location Long",
+            "isPrivate": "Is Private",
+            "address": "Address",
+            "contentCreationTime": "Content Creation Time",
+            "contentSize": "Content Size",
+            "mediaWidth": "Media Width",
+            "mediaHeight": "Media Height",
+            "thirdPartyId": "Third Party Id",
+            "thirdPartyUrl": "Third Party Url",
+            "mediaSource": "Media Source",
+            "fetchingAddress": "Fetching Address",
+            "album": "Album"
+        }
+    }
+}

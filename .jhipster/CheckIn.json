@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "locationLat",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "locationLong",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "locationText",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "placeId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "photoReference",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mapImageLocalUri",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mapImageRemoteUri",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170524093237",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "check_in",
+    "pagination": "pagination"
+}
