@@ -122,6 +122,13 @@ public class UserDTO {
         this.lastModifiedDate = lastModifiedDate;
         this.authorities = authorities;
         this.totalTrips = totalTrips;
+        this.gender = gender;
+        this.name = name;
+        this.phone = phone;
+        this.place = place;
+        this.profileImageLocalUrl = profileImageLocalUrl;
+        this.totalPublishedTrips = totalPublishedTrips;
+        this.userName = userName;
     }
 
     public Long getId() {

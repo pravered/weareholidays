@@ -181,28 +181,43 @@ public class UserService {
      * @return updated user
      */
     public Optional<UserDTO> updateUser(UserDTO userDTO) {
-        return Optional.of(userRepository
-            .findOne(userDTO.getId()))
+        return userRepository
+            .findOneByEmail(userDTO.getEmail())
             .map(user -> {
-                user.setLogin(userDTO.getLogin());
-                user.setFirstName(userDTO.getFirstName());
-                user.setLastName(userDTO.getLastName());
-                user.setEmail(userDTO.getEmail());
-                user.setImageUrl(userDTO.getImageUrl());
-                user.setActivated(userDTO.isActivated());
-                user.setLangKey(userDTO.getLangKey());
-                user.setTotalTrips(userDTO.getTotalTrips());
-                user.setGender(userDTO.getGender());
-                user.setName(userDTO.getName());
-                user.setPhone(userDTO.getPhone());
-                user.setPlace(userDTO.getPlace());
-                user.setProfileImageLocalUrl(user.getProfileImageLocalUrl());
-                user.setTotalPublishedTrips(userDTO.getTotalPublishedTrips());
+               // user.setLogin(userDTO.getLogin());
+                if(userDTO.getFirstName() != null)
+                    user.setFirstName(userDTO.getFirstName());
+                if(userDTO.getLastName() != null)
+                    user.setLastName(userDTO.getLastName());
+               // user.setEmail(userDTO.getEmail());
+                if(userDTO.getImageUrl() != null)
+                    user.setImageUrl(userDTO.getImageUrl());
+                if(userDTO.isActivated())
+                    user.setActivated(userDTO.isActivated());
+                if(userDTO.getLangKey() != null)
+                    user.setLangKey(userDTO.getLangKey());
+                if(userDTO.getTotalTrips() != null)
+                    user.setTotalTrips(userDTO.getTotalTrips());
+                if(userDTO.getGender() != null)
+                    user.setGender(userDTO.getGender());
+                if(userDTO.getName() != null)
+                    user.setName(userDTO.getName());
+                if(userDTO.getPhone() != null)
+                    user.setPhone(userDTO.getPhone());
+                if(userDTO.getPlace() != null)
+                    user.setPlace(userDTO.getPlace());
+                if(userDTO.getProfileImageLocalUrl() != null)
+                    user.setProfileImageLocalUrl(user.getProfileImageLocalUrl());
+                if(userDTO.getTotalPublishedTrips() != null)
+                    user.setTotalPublishedTrips(userDTO.getTotalPublishedTrips());
                 Set<Authority> managedAuthorities = user.getAuthorities();
                 managedAuthorities.clear();
-                userDTO.getAuthorities().stream()
-                    .map(authorityRepository::findOne)
-                    .forEach(managedAuthorities::add);
+                if(userDTO.getAuthorities() != null){
+                    userDTO.getAuthorities().stream()
+                        .map(authorityRepository::findOne)
+                        .forEach(managedAuthorities::add);
+                }
+
                 log.debug("Changed Information for User: {}", user);
                 return user;
             })
