@@ -1,0 +1,116 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTimelineLabel" data-translate="weareholidaysApp.timeline.home.createOrEditLabel">Create or edit a Timeline</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.timeline.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.timeline.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.albumContent" for="field_albumContent">Album Content</label>
+            <input type="text" class="form-control" name="albumContent" id="field_albumContent"
+                    ng-model="vm.timeline.albumContent"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.daySummaryDummyContent" for="field_daySummaryDummyContent">Day Summary Dummy Content</label>
+            <input type="text" class="form-control" name="daySummaryDummyContent" id="field_daySummaryDummyContent"
+                    ng-model="vm.timeline.daySummaryDummyContent"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.intercityTravelLocationPin" for="field_intercityTravelLocationPin">Intercity Travel Location Pin</label>
+            <input type="text" class="form-control" name="intercityTravelLocationPin" id="field_intercityTravelLocationPin"
+                    ng-model="vm.timeline.intercityTravelLocationPin"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.dayLocationPin" for="field_dayLocationPin">Day Location Pin</label>
+            <input type="text" class="form-control" name="dayLocationPin" id="field_dayLocationPin"
+                    ng-model="vm.timeline.dayLocationPin"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.checkInContent" for="field_checkInContent">Check In Content</label>
+            <input type="text" class="form-control" name="checkInContent" id="field_checkInContent"
+                    ng-model="vm.timeline.checkInContent"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.noteContent" for="field_noteContent">Note Content</label>
+            <input type="text" class="form-control" name="noteContent" id="field_noteContent"
+                    ng-model="vm.timeline.noteContent"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.contentType" for="field_contentType">Content Type</label>
+            <input type="text" class="form-control" name="contentType" id="field_contentType"
+                    ng-model="vm.timeline.contentType"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.contentTimeStamp" for="field_contentTimeStamp">Content Time Stamp</label>
+            <input type="number" class="form-control" name="contentTimeStamp" id="field_contentTimeStamp"
+                    ng-model="vm.timeline.contentTimeStamp"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.displayOrder" for="field_displayOrder">Display Order</label>
+            <input type="number" class="form-control" name="displayOrder" id="field_displayOrder"
+                    ng-model="vm.timeline.displayOrder"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.source" for="field_source">Source</label>
+            <input type="text" class="form-control" name="source" id="field_source"
+                    ng-model="vm.timeline.source"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.thirdPartyId" for="field_thirdPartyId">Third Party Id</label>
+            <input type="text" class="form-control" name="thirdPartyId" id="field_thirdPartyId"
+                    ng-model="vm.timeline.thirdPartyId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.dayOrder" for="field_dayOrder">Day Order</label>
+            <input type="number" class="form-control" name="dayOrder" id="field_dayOrder"
+                    ng-model="vm.timeline.dayOrder"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="weareholidaysApp.timeline.dateInMilli" for="field_dateInMilli">Date In Milli</label>
+            <input type="number" class="form-control" name="dateInMilli" id="field_dateInMilli"
+                    ng-model="vm.timeline.dateInMilli"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="weareholidaysApp.timeline.content" for="field_content">Content</label>
+            <select class="form-control" id="field_content" name="content" ng-model="vm.timeline.contentId" ng-options="content.id as content.id for content in vm.contents | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="weareholidaysApp.timeline.day" for="field_day">Day</label>
+            <select class="form-control" id="field_day" name="day" ng-model="vm.timeline.dayId" ng-options="day.id as day.id for day in vm.days"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

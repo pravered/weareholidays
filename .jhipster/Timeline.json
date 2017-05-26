@@ -1,0 +1,78 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "content",
+            "otherEntityName": "content",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "timeline"
+        },
+        {
+            "relationshipName": "day",
+            "otherEntityName": "day",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "albumContent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "daySummaryDummyContent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "intercityTravelLocationPin",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dayLocationPin",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "checkInContent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "noteContent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contentType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contentTimeStamp",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "displayOrder",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "thirdPartyId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dayOrder",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dateInMilli",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170524111759",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "timeline",
+    "pagination": "pagination"
+}

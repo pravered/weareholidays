@@ -1,0 +1,79 @@
+
+<div>
+    <h2><span data-translate="weareholidaysApp.timeline.detail.title">Timeline</span> {{vm.timeline.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="weareholidaysApp.timeline.albumContent">Album Content</span></dt>
+        <dd>
+            <span>{{vm.timeline.albumContent}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.daySummaryDummyContent">Day Summary Dummy Content</span></dt>
+        <dd>
+            <span>{{vm.timeline.daySummaryDummyContent}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.intercityTravelLocationPin">Intercity Travel Location Pin</span></dt>
+        <dd>
+            <span>{{vm.timeline.intercityTravelLocationPin}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.dayLocationPin">Day Location Pin</span></dt>
+        <dd>
+            <span>{{vm.timeline.dayLocationPin}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.checkInContent">Check In Content</span></dt>
+        <dd>
+            <span>{{vm.timeline.checkInContent}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.noteContent">Note Content</span></dt>
+        <dd>
+            <span>{{vm.timeline.noteContent}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.contentType">Content Type</span></dt>
+        <dd>
+            <span>{{vm.timeline.contentType}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.contentTimeStamp">Content Time Stamp</span></dt>
+        <dd>
+            <span>{{vm.timeline.contentTimeStamp}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.displayOrder">Display Order</span></dt>
+        <dd>
+            <span>{{vm.timeline.displayOrder}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.source">Source</span></dt>
+        <dd>
+            <span>{{vm.timeline.source}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.thirdPartyId">Third Party Id</span></dt>
+        <dd>
+            <span>{{vm.timeline.thirdPartyId}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.dayOrder">Day Order</span></dt>
+        <dd>
+            <span>{{vm.timeline.dayOrder}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.dateInMilli">Date In Milli</span></dt>
+        <dd>
+            <span>{{vm.timeline.dateInMilli}}</span>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.content">Content</span></dt>
+        <dd>
+            <a ui-sref="content-detail({id:vm.timeline.contentId})">{{vm.timeline.contentId}}</a>
+        </dd>
+        <dt><span data-translate="weareholidaysApp.timeline.day">Day</span></dt>
+        <dd>
+            <a ui-sref="day-detail({id:vm.timeline.dayId})">{{vm.timeline.dayId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="timeline-detail.edit({id:vm.timeline.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

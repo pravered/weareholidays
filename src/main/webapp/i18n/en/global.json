@@ -18,6 +18,8 @@
                 "checkIn": "Check In",
                 "media": "Media",
                 "album": "Album",
+                "content": "Content",
+                "timeline": "Timeline",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

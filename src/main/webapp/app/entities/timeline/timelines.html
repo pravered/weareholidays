@@ -1,0 +1,92 @@
+<div>
+    <h2 data-translate="weareholidaysApp.timeline.home.title">Timelines</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="timeline.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="weareholidaysApp.timeline.home.createLabel">
+                        Create new Timeline
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="albumContent"><span data-translate="weareholidaysApp.timeline.albumContent">Album Content</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="daySummaryDummyContent"><span data-translate="weareholidaysApp.timeline.daySummaryDummyContent">Day Summary Dummy Content</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="intercityTravelLocationPin"><span data-translate="weareholidaysApp.timeline.intercityTravelLocationPin">Intercity Travel Location Pin</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dayLocationPin"><span data-translate="weareholidaysApp.timeline.dayLocationPin">Day Location Pin</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="checkInContent"><span data-translate="weareholidaysApp.timeline.checkInContent">Check In Content</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="noteContent"><span data-translate="weareholidaysApp.timeline.noteContent">Note Content</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contentType"><span data-translate="weareholidaysApp.timeline.contentType">Content Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contentTimeStamp"><span data-translate="weareholidaysApp.timeline.contentTimeStamp">Content Time Stamp</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="displayOrder"><span data-translate="weareholidaysApp.timeline.displayOrder">Display Order</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="source"><span data-translate="weareholidaysApp.timeline.source">Source</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="thirdPartyId"><span data-translate="weareholidaysApp.timeline.thirdPartyId">Third Party Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dayOrder"><span data-translate="weareholidaysApp.timeline.dayOrder">Day Order</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateInMilli"><span data-translate="weareholidaysApp.timeline.dateInMilli">Date In Milli</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contentId"><span data-translate="weareholidaysApp.timeline.content">Content</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dayId"><span data-translate="weareholidaysApp.timeline.day">Day</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="timeline in vm.timelines track by timeline.id">
+                    <td><a ui-sref="timeline-detail({id:timeline.id})">{{timeline.id}}</a></td>
+                    <td>{{timeline.albumContent}}</td>
+                    <td>{{timeline.daySummaryDummyContent}}</td>
+                    <td>{{timeline.intercityTravelLocationPin}}</td>
+                    <td>{{timeline.dayLocationPin}}</td>
+                    <td>{{timeline.checkInContent}}</td>
+                    <td>{{timeline.noteContent}}</td>
+                    <td>{{timeline.contentType}}</td>
+                    <td>{{timeline.contentTimeStamp}}</td>
+                    <td>{{timeline.displayOrder}}</td>
+                    <td>{{timeline.source}}</td>
+                    <td>{{timeline.thirdPartyId}}</td>
+                    <td>{{timeline.dayOrder}}</td>
+                    <td>{{timeline.dateInMilli}}</td>
+                    <td>
+                        <a ui-sref="content-detail({id:timeline.contentId})">{{timeline.contentId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="day-detail({id:timeline.dayId})">{{timeline.dayId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="timeline-detail({id:timeline.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="timeline.edit({id:timeline.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="timeline.delete({id:timeline.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

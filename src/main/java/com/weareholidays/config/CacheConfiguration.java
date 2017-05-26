@@ -54,6 +54,8 @@ public class CacheConfiguration {
             cm.createCache(com.weareholidays.domain.Media.class.getName(), jcacheConfiguration);
             cm.createCache(com.weareholidays.domain.Album.class.getName(), jcacheConfiguration);
             cm.createCache(com.weareholidays.domain.Album.class.getName() + ".media", jcacheConfiguration);
+            cm.createCache(com.weareholidays.domain.Content.class.getName(), jcacheConfiguration);
+            cm.createCache(com.weareholidays.domain.Timeline.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

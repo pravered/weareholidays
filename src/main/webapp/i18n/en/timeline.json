@@ -1,0 +1,35 @@
+{
+    "weareholidaysApp": {
+        "timeline" : {
+            "home": {
+                "title": "Timelines",
+                "createLabel": "Create a new Timeline",
+                "createOrEditLabel": "Create or edit a Timeline"
+            },
+            "created": "A new Timeline is created with identifier {{ param }}",
+            "updated": "A Timeline is updated with identifier {{ param }}",
+            "deleted": "A Timeline is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Timeline {{ id }}?"
+            },
+            "detail": {
+                "title": "Timeline"
+            },
+            "albumContent": "Album Content",
+            "daySummaryDummyContent": "Day Summary Dummy Content",
+            "intercityTravelLocationPin": "Intercity Travel Location Pin",
+            "dayLocationPin": "Day Location Pin",
+            "checkInContent": "Check In Content",
+            "noteContent": "Note Content",
+            "contentType": "Content Type",
+            "contentTimeStamp": "Content Time Stamp",
+            "displayOrder": "Display Order",
+            "source": "Source",
+            "thirdPartyId": "Third Party Id",
+            "dayOrder": "Day Order",
+            "dateInMilli": "Date In Milli",
+            "content": "Content",
+            "day": "Day"
+        }
+    }
+}

@@ -92,7 +92,9 @@ public class UserService {
         Authority authority = authorityRepository.findOne(AuthoritiesConstants.USER);
         Set<Authority> authorities = new HashSet<>();
         String encryptedPassword = passwordEncoder.encode(password);
-        newUser.setLogin(login);
+        String uuid = UUID.randomUUID().toString();
+        // check whether this UUID already exists or not
+        newUser.setLogin(uuid);
         // new user gets initially a generated password
         newUser.setPassword(encryptedPassword);
         newUser.setFirstName(firstName);
@@ -207,7 +209,7 @@ public class UserService {
                 if(userDTO.getPlace() != null)
                     user.setPlace(userDTO.getPlace());
                 if(userDTO.getProfileImageLocalUrl() != null)
-                    user.setProfileImageLocalUrl(user.getProfileImageLocalUrl());
+                    user.setProfileImageLocalUrl(userDTO.getProfileImageLocalUrl());
                 if(userDTO.getTotalPublishedTrips() != null)
                     user.setTotalPublishedTrips(userDTO.getTotalPublishedTrips());
                 Set<Authority> managedAuthorities = user.getAuthorities();

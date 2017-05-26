@@ -29,6 +29,16 @@ public class TripPeopleDTO implements Serializable {
 
     private String identifier;
 
+    private Long tripId;
+
+    public Long getTripId() {
+        return tripId;
+    }
+
+    public void setTripId(Long tripId) {
+        this.tripId = tripId;
+    }
+
     public Long getId() {
         return id;
     }

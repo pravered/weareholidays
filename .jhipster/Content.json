@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "media",
+            "otherEntityName": "media",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "content"
+        },
+        {
+            "relationshipName": "album",
+            "otherEntityName": "album",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "content"
+        },
+        {
+            "relationshipName": "checkIn",
+            "otherEntityName": "checkIn",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "content"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20170524111247",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "content",
+    "pagination": "pagination"
+}

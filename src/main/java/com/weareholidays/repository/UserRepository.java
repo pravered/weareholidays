@@ -25,6 +25,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findOneByEmail(String email);
 
+    // get UID for emailId
+    // get UID for FBId
+    // check whether user already exists for FBId
+
+
     Optional<User> findOneByLogin(String login);
 
     @EntityGraph(attributePaths = "authorities")

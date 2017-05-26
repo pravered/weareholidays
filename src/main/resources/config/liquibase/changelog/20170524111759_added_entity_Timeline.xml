@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Timeline.
+    -->
+    <changeSet id="20170524111759-1" author="jhipster">
+        <createTable tableName="timeline">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="album_content" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="day_summary_dummy_content" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="intercity_travel_location_pin" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="day_location_pin" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="check_in_content" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="note_content" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="content_time_stamp" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="display_order" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="source" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="third_party_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="day_order" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="date_in_milli" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="content_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
+            <column name="day_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+</databaseChangeLog>
