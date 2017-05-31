@@ -2,8 +2,7 @@ package com.weareholidays.service.dto;
 
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -23,9 +22,9 @@ public class TripDTO implements Serializable {
 
     private Double endLocationLong;
 
-    private Long startTime;
+    private Date startTime;
 
-    private Long endTime;
+    private Date endTime;
 
     private Boolean isUploaded;
 
@@ -33,7 +32,7 @@ public class TripDTO implements Serializable {
 
     private Boolean isPublished;
 
-    private Long publishedTime;
+    private Date publishedTime;
 
     private Boolean isDeleted;
 
@@ -105,18 +104,18 @@ public class TripDTO implements Serializable {
     public void setEndLocationLong(Double endLocationLong) {
         this.endLocationLong = endLocationLong;
     }
-    public Long getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Long startTime) {
+    public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
-    public Long getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Long endTime) {
+    public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
     public Boolean getIsUploaded() {
@@ -140,11 +139,11 @@ public class TripDTO implements Serializable {
     public void setIsPublished(Boolean isPublished) {
         this.isPublished = isPublished;
     }
-    public Long getPublishedTime() {
+    public Date getPublishedTime() {
         return publishedTime;
     }
 
-    public void setPublishedTime(Long publishedTime) {
+    public void setPublishedTime(Date publishedTime) {
         this.publishedTime = publishedTime;
     }
     public Boolean getIsDeleted() {

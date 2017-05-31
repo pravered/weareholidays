@@ -3,9 +3,11 @@ package com.weareholidays.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
@@ -41,10 +43,10 @@ public class Trip implements Serializable {
     private Double endLocationLong;
 
     @Column(name = "start_time")
-    private Long startTime;
+    private Date startTime;
 
     @Column(name = "end_time")
-    private Long endTime;
+    private Date endTime;
 
     @Column(name = "is_uploaded")
     private Boolean isUploaded;
@@ -56,7 +58,7 @@ public class Trip implements Serializable {
     private Boolean isPublished;
 
     @Column(name = "published_time")
-    private Long publishedTime;
+    private Date publishedTime;
 
     @Column(name = "is_deleted")
     private Boolean isDeleted;
@@ -184,29 +186,29 @@ public class Trip implements Serializable {
         this.endLocationLong = endLocationLong;
     }
 
-    public Long getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public Trip startTime(Long startTime) {
+    public Trip startTime(Date startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    public void setStartTime(Long startTime) {
+    public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
 
-    public Long getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 
-    public Trip endTime(Long endTime) {
+    public Trip endTime(Date endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    public void setEndTime(Long endTime) {
+    public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
 
@@ -249,16 +251,16 @@ public class Trip implements Serializable {
         this.isPublished = isPublished;
     }
 
-    public Long getPublishedTime() {
+    public Date getPublishedTime() {
         return publishedTime;
     }
 
-    public Trip publishedTime(Long publishedTime) {
+    public Trip publishedTime(Date publishedTime) {
         this.publishedTime = publishedTime;
         return this;
     }
 
-    public void setPublishedTime(Long publishedTime) {
+    public void setPublishedTime(Date publishedTime) {
         this.publishedTime = publishedTime;
     }
 

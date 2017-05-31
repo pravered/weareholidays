@@ -24,6 +24,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.Date;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -55,11 +56,11 @@ public class TripResourceIntTest {
     private static final Double DEFAULT_END_LOCATION_LONG = 1D;
     private static final Double UPDATED_END_LOCATION_LONG = 2D;
 
-    private static final Long DEFAULT_START_TIME = 1L;
-    private static final Long UPDATED_START_TIME = 2L;
+    private static final Date DEFAULT_START_TIME = new Date();
+    private static final Date UPDATED_START_TIME = new Date();
 
-    private static final Long DEFAULT_END_TIME = 1L;
-    private static final Long UPDATED_END_TIME = 2L;
+    private static final Date DEFAULT_END_TIME = new Date();
+    private static final Date UPDATED_END_TIME = new Date();
 
     private static final Boolean DEFAULT_IS_UPLOADED = false;
     private static final Boolean UPDATED_IS_UPLOADED = true;
@@ -70,8 +71,8 @@ public class TripResourceIntTest {
     private static final Boolean DEFAULT_IS_PUBLISHED = false;
     private static final Boolean UPDATED_IS_PUBLISHED = true;
 
-    private static final Long DEFAULT_PUBLISHED_TIME = 1L;
-    private static final Long UPDATED_PUBLISHED_TIME = 2L;
+    private static final Date DEFAULT_PUBLISHED_TIME = new Date();
+    private static final Date UPDATED_PUBLISHED_TIME = new Date();
 
     private static final Boolean DEFAULT_IS_DELETED = false;
     private static final Boolean UPDATED_IS_DELETED = true;
@@ -245,12 +246,12 @@ public class TripResourceIntTest {
             .andExpect(jsonPath("$.[*].startLocationLong").value(hasItem(DEFAULT_START_LOCATION_LONG.doubleValue())))
             .andExpect(jsonPath("$.[*].endLocationLat").value(hasItem(DEFAULT_END_LOCATION_LAT.doubleValue())))
             .andExpect(jsonPath("$.[*].endLocationLong").value(hasItem(DEFAULT_END_LOCATION_LONG.doubleValue())))
-            .andExpect(jsonPath("$.[*].startTime").value(hasItem(DEFAULT_START_TIME.intValue())))
-            .andExpect(jsonPath("$.[*].endTime").value(hasItem(DEFAULT_END_TIME.intValue())))
+            .andExpect(jsonPath("$.[*].startTime").value(hasItem(DEFAULT_START_TIME.getTime())))
+            .andExpect(jsonPath("$.[*].endTime").value(hasItem(DEFAULT_END_TIME.getTime())))
             .andExpect(jsonPath("$.[*].isUploaded").value(hasItem(DEFAULT_IS_UPLOADED.booleanValue())))
             .andExpect(jsonPath("$.[*].isFinished").value(hasItem(DEFAULT_IS_FINISHED.booleanValue())))
             .andExpect(jsonPath("$.[*].isPublished").value(hasItem(DEFAULT_IS_PUBLISHED.booleanValue())))
-            .andExpect(jsonPath("$.[*].publishedTime").value(hasItem(DEFAULT_PUBLISHED_TIME.intValue())))
+            .andExpect(jsonPath("$.[*].publishedTime").value(hasItem(DEFAULT_PUBLISHED_TIME.getTime())))
             .andExpect(jsonPath("$.[*].isDeleted").value(hasItem(DEFAULT_IS_DELETED.booleanValue())))
             .andExpect(jsonPath("$.[*].featureImageLocalUri").value(hasItem(DEFAULT_FEATURE_IMAGE_LOCAL_URI.toString())))
             .andExpect(jsonPath("$.[*].featureImageRemoteUri").value(hasItem(DEFAULT_FEATURE_IMAGE_REMOTE_URI.toString())))
@@ -278,12 +279,12 @@ public class TripResourceIntTest {
             .andExpect(jsonPath("$.startLocationLong").value(DEFAULT_START_LOCATION_LONG.doubleValue()))
             .andExpect(jsonPath("$.endLocationLat").value(DEFAULT_END_LOCATION_LAT.doubleValue()))
             .andExpect(jsonPath("$.endLocationLong").value(DEFAULT_END_LOCATION_LONG.doubleValue()))
-            .andExpect(jsonPath("$.startTime").value(DEFAULT_START_TIME.intValue()))
-            .andExpect(jsonPath("$.endTime").value(DEFAULT_END_TIME.intValue()))
+            .andExpect(jsonPath("$.startTime").value(DEFAULT_START_TIME.getTime()))
+            .andExpect(jsonPath("$.endTime").value(DEFAULT_END_TIME.getTime()))
             .andExpect(jsonPath("$.isUploaded").value(DEFAULT_IS_UPLOADED.booleanValue()))
             .andExpect(jsonPath("$.isFinished").value(DEFAULT_IS_FINISHED.booleanValue()))
             .andExpect(jsonPath("$.isPublished").value(DEFAULT_IS_PUBLISHED.booleanValue()))
-            .andExpect(jsonPath("$.publishedTime").value(DEFAULT_PUBLISHED_TIME.intValue()))
+            .andExpect(jsonPath("$.publishedTime").value(DEFAULT_PUBLISHED_TIME.getTime()))
             .andExpect(jsonPath("$.isDeleted").value(DEFAULT_IS_DELETED.booleanValue()))
             .andExpect(jsonPath("$.featureImageLocalUri").value(DEFAULT_FEATURE_IMAGE_LOCAL_URI.toString()))
             .andExpect(jsonPath("$.featureImageRemoteUri").value(DEFAULT_FEATURE_IMAGE_REMOTE_URI.toString()))

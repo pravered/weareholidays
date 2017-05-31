@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet id="1496223496142-1" author="shanmukh (generated)">
+        <dropColumn tableName="trip" columnName="start_time"/>
+    </changeSet>
+    <changeSet id="1496223496142-2" author="shanmukh (generated)">
+        <dropColumn tableName="trip" columnName="end_time"/>
+    </changeSet>
+    <changeSet id="1496223496142-3" author="shanmukh (generated)">
+        <dropColumn tableName="trip" columnName="published_time"></dropColumn>
+    </changeSet>
+    <changeSet id="1496223496142-4" author="shanmukh (generated)">
+        <addColumn tableName="trip">
+            <column name="start_time" type="datetime"></column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="1496223496142-5" author="shanmukh (generated)">
+        <addColumn tableName="trip">
+            <column name="end_time" type="datetime"></column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="1496223496142-6" author="shanmukh (generated)">
+        <addColumn tableName="trip">
+            <column name="published_time" type="datetime"></column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>
