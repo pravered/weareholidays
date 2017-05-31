@@ -92,9 +92,7 @@ public class UserService {
         Authority authority = authorityRepository.findOne(AuthoritiesConstants.USER);
         Set<Authority> authorities = new HashSet<>();
         String encryptedPassword = passwordEncoder.encode(password);
-        String uuid = UUID.randomUUID().toString();
-        // check whether this UUID already exists or not
-        newUser.setLogin(uuid);
+        newUser.setLogin(login);
         // new user gets initially a generated password
         newUser.setPassword(encryptedPassword);
         newUser.setFirstName(firstName);

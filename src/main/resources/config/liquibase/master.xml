@@ -27,5 +27,7 @@
     <include file="classpath:config/liquibase/changelog/20170524094147_added_entity_constraints_Media.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170524111247_added_entity_constraints_Content.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170524111759_added_entity_constraints_Timeline.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170531150747_modified_entity_Trip.xml" relativeToChangelogFile="false"/>
+
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

@@ -11,6 +11,7 @@ import com.weareholidays.service.dto.UserDTO;
 import com.weareholidays.web.rest.vm.ManagedUserVM;
 import com.weareholidays.web.rest.util.HeaderUtil;
 import com.weareholidays.web.rest.util.PaginationUtil;
+
 import io.github.jhipster.web.util.ResponseUtil;
 import io.swagger.annotations.ApiParam;
 
@@ -31,26 +32,20 @@ import java.util.*;
 /**
  * REST controller for managing users.
  *
- * <p>This class accesses the User entity, and needs to fetch its collection of authorities.</p>
- * <p>
- * For a normal use-case, it would be better to have an eager relationship between User and Authority,
- * and send everything to the client side: there would be no View Model and DTO, a lot less code, and an outer-join
- * which would be good for performance.
- * </p>
- * <p>
- * We use a View Model and a DTO for 3 reasons:
- * <ul>
- * <li>We want to keep a lazy association between the user and the authorities, because people will
- * quite often do relationships with the user, and we don't want them to get the authorities all
- * the time for nothing (for performance reasons). This is the #1 goal: we should not impact our users'
- * application because of this use-case.</li>
- * <li> Not having an outer join causes n+1 requests to the database. This is not a real issue as
- * we have by default a second-level cache. This means on the first HTTP call we do the n+1 requests,
- * but then all authorities come from the cache, so in fact it's much better than doing an outer join
- * (which will get lots of data from the database, for each HTTP call).</li>
- * <li> As this manages users, for security reasons, we'd rather have a DTO layer.</li>
- * </ul>
- * <p>Another option would be to have a specific JPA entity graph to handle this case.</p>
+ * <p>This class accesses the User entity, and needs to fetch its collection of authorities.</p> <p>
+ * For a normal use-case, it would be better to have an eager relationship between User and
+ * Authority, and send everything to the client side: there would be no View Model and DTO, a lot
+ * less code, and an outer-join which would be good for performance. </p> <p> We use a View Model
+ * and a DTO for 3 reasons: <ul> <li>We want to keep a lazy association between the user and the
+ * authorities, because people will quite often do relationships with the user, and we don't want
+ * them to get the authorities all the time for nothing (for performance reasons). This is the #1
+ * goal: we should not impact our users' application because of this use-case.</li> <li> Not having
+ * an outer join causes n+1 requests to the database. This is not a real issue as we have by default
+ * a second-level cache. This means on the first HTTP call we do the n+1 requests, but then all
+ * authorities come from the cache, so in fact it's much better than doing an outer join (which will
+ * get lots of data from the database, for each HTTP call).</li> <li> As this manages users, for
+ * security reasons, we'd rather have a DTO layer.</li> </ul> <p>Another option would be to have a
+ * specific JPA entity graph to handle this case.</p>
  */
 @RestController
 @RequestMapping("/api")
@@ -67,7 +62,7 @@ public class UserResource {
     private final UserService userService;
 
     public UserResource(UserRepository userRepository, MailService mailService,
-            UserService userService) {
+                        UserService userService) {
 
         this.userRepository = userRepository;
         this.mailService = mailService;
@@ -83,7 +78,8 @@ public class UserResource {
      * </p>
      *
      * @param managedUserVM the user to create
-     * @return the ResponseEntity with status 201 (Created) and with body the new user, or with status 400 (Bad Request) if the login or email is already in use
+     * @return the ResponseEntity with status 201 (Created) and with body the new user, or with
+     * status 400 (Bad Request) if the login or email is already in use
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PostMapping("/users")
@@ -96,7 +92,7 @@ public class UserResource {
             return ResponseEntity.badRequest()
                 .headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new user cannot already have an ID"))
                 .body(null);
-        // Lowercase the user login before comparing with database
+            // Lowercase the user login before comparing with database
         } else if (userRepository.findOneByLogin(managedUserVM.getLogin().toLowerCase()).isPresent()) {
             return ResponseEntity.badRequest()
                 .headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "userexists", "Login already in use"))
@@ -107,9 +103,9 @@ public class UserResource {
                 .body(null);
         } else {
             User newUser = userService.createUser(managedUserVM);
-           // mailService.sendCreationEmail(newUser);
+            // mailService.sendCreationEmail(newUser);
             return ResponseEntity.created(new URI("/api/users/" + newUser.getLogin()))
-                .headers(HeaderUtil.createAlert( "userManagement.created", newUser.getLogin()))
+                .headers(HeaderUtil.createAlert("userManagement.created", newUser.getLogin()))
                 .body(newUser);
         }
     }
@@ -118,15 +114,15 @@ public class UserResource {
      * PUT  /users : Updates an existing User.
      *
      * @param managedUserVM the user to update
-     * @return the ResponseEntity with status 200 (OK) and with body the updated user,
-     * or with status 400 (Bad Request) if the login or email is already in use,
-     * or with status 500 (Internal Server Error) if the user couldn't be updated
+     * @return the ResponseEntity with status 200 (OK) and with body the updated user, or with
+     * status 400 (Bad Request) if the login or email is already in use, or with status 500
+     * (Internal Server Error) if the user couldn't be updated
      */
     @PutMapping("/users")
     @Timed
     public ResponseEntity<UserDTO> updateUser(@RequestBody ManagedUserVM managedUserVM) {
         log.debug("REST request to update User : {}", managedUserVM);
-       // Optional<User> existingUser = userRepository.findOneByEmail(managedUserVM.getEmail());
+        // Optional<User> existingUser = userRepository.findOneByEmail(managedUserVM.getEmail());
        /* if (existingUser.isPresent() && (!existingUser.get().getId().equals(managedUserVM.getId()))) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "emailexists", "Email already in use")).body(null);
         }
@@ -158,7 +154,8 @@ public class UserResource {
      * GET  /users/:login : get the "login" user.
      *
      * @param login the login of the user to find
-     * @return the ResponseEntity with status 200 (OK) and with body the "login" user, or with status 404 (Not Found)
+     * @return the ResponseEntity with status 200 (OK) and with body the "login" user, or with
+     * status 404 (Not Found)
      */
     @GetMapping("/users/{login:" + Constants.LOGIN_REGEX + "}")
     @Timed
@@ -181,6 +178,6 @@ public class UserResource {
     public ResponseEntity<Void> deleteUser(@PathVariable String login) {
         log.debug("REST request to delete User: {}", login);
         userService.deleteUser(login);
-        return ResponseEntity.ok().headers(HeaderUtil.createAlert( "userManagement.deleted", login)).build();
+        return ResponseEntity.ok().headers(HeaderUtil.createAlert("userManagement.deleted", login)).build();
     }
 }
